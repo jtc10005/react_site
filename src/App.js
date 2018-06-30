@@ -5,8 +5,8 @@ import './App.css';
 class App extends Component {
   render() {
     var textTransition = 'Jay Culpepper';
-    setTimeout(() => {
-      alert('here');
+    setInterval(() => {
+      // alert('here');
       textTransition = 'developer...';
     }, 1000);
     return (

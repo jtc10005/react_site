@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { TimedText } from './components/TimedText';
+import { Clock } from './components/Clock';
 import './App.css';
 
 class App extends Component {
   render() {
-    var textTransition = 'Jay Culpepper';
-    setInterval(() => {
-      // alert('here');
-      textTransition = 'developer...';
-    }, 1000);
     return (
-      <div class="container">
-        <div class="content">
-          <Welcome name={textTransition} />
+      <div className={'container'}>
+        <div className={'content'}>
+          <TimedText />
+          <Clock />
         </div>
       </div>
     );
@@ -20,7 +17,3 @@ class App extends Component {
 }
 
 export default App;
-
-function Welcome(props) {
-  return <h1>{props.name}</h1>;
-}

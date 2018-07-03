@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { Clock } from './Clock';
+import { withRouter } from 'react-router-dom';
 
-export class TimedText extends Component {
+export default class TimedText extends Component {
+
   constructor(props) {
     super(props);
+    this.tick = this.tick.bind(this);
     this.state = {
       count: 1
     };
@@ -17,10 +21,14 @@ export class TimedText extends Component {
     clearInterval(this.timerID);
   }
 
-  tick() {
+  tick(event) {
     this.setState({
-      count: this.state.count === 3 ? 1 : this.state.count + 1
+      count: this.state.count + 1
     });
+    if (this.state.count === 4) {
+      this.props.history.push('/Index');
+      // this.context.router.push('/Index');
+    }
   }
 
   render() {
@@ -30,13 +38,13 @@ export class TimedText extends Component {
         {this.state.count === 2 ? <FadeText text="My name is" /> : null}
         {this.state.count === 3 ? <FadeText text="James Culpepper" /> : null}
         {/* <div> the count is on: {this.state.count} </div> */}
+        <Clock />
       </div>
     );
   }
 }
 
 ReactDOM.render(<TimedText />, document.getElementById('root'));
-export default TimedText;
 
 export function FadeText(props) {
   return <h2 className="elementToFadeInAndOut"> {props.text}</h2>;

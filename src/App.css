@@ -84,8 +84,8 @@
   /* width:200px;
   height: 200px;
   background: red; */
-  -webkit-animation: fadeinout 7s linear forwards;
-  animation: fadeinout 7s linear forwards;
+  -webkit-animation: fadeinout 5s linear forwards;
+  animation: fadeinout 5s linear forwards;
 }
 
 @-webkit-keyframes fadeinout {

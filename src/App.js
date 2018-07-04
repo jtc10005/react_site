@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Home from './containers/home';
+import { Home } from './containers/home';
 import Index from './containers/index';
 class App extends Component {
   render() {
@@ -18,7 +18,6 @@ class App extends Component {
             </Switch>
           </BrowserRouter>
           {/* <TimedText /> */}
-          
         </div>
       </div>
     );
